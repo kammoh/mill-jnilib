@@ -19,7 +19,7 @@ object jnilib extends ScalaModule with PublishModule {
   def publishVersion = "0.3.1"
   def pomSettings = PomSettings(
     description = "jnilib",
-    organization = "io.crashbox",
+    organization = "com.github.kammoh",
     url = "https://github.com/jodersky/mill-jnilib",
     licenses = Seq(License.`BSD-3-Clause`),
     versionControl = VersionControl.github("jodersky", "mill-jnilib"),
