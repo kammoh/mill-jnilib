@@ -3,5 +3,4 @@ jdk:
 before_install:
   - sh -c '(echo "#!/usr/bin/env sh" && curl -L https://github.com/lihaoyi/mill/releases/download/0.11.0/0.11.0) > ~/mill && chmod +x ~/mill'
 install:
-  - ./mill -i _.publishM2Local
-  
+  - ./mill -i _.publishLocal
