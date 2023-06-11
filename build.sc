@@ -1,22 +1,22 @@
-import $ivy.`de.tototec::de.tobiasroeser.mill.integrationtest_mill0.10:0.5.0`
+import $ivy.`de.tototec::de.tobiasroeser.mill.integrationtest_mill0.11:0.7.1`
 import de.tobiasroeser.mill.integrationtest.MillIntegrationTestModule
 import mill._, scalalib._, publish._
 
 object jnilib extends ScalaModule with PublishModule {
-  def scalaVersion = "2.13.5"
+  def scalaVersion = "2.13.11"
   def scalacOptions = Seq(
     "-deprecation",
     "-release", "8"
   )
 
-  val millVersion = "0.10.1"
+  val millVersion = "0.11.0"
 
   override def compileIvyDeps = super.compileIvyDeps() ++ Agg(
     ivy"com.lihaoyi::mill-main:$millVersion",
     ivy"com.lihaoyi::mill-scalalib:$millVersion"
   )
 
-  def publishVersion = "0.3.0"
+  def publishVersion = "0.3.1"
   def pomSettings = PomSettings(
     description = "jnilib",
     organization = "io.crashbox",
@@ -34,7 +34,7 @@ object jnilib extends ScalaModule with PublishModule {
 object itest extends MillIntegrationTestModule {
   import de.tobiasroeser.mill.integrationtest._
 
-  def millTestVersion  = jnilib.millVersion
+  def millTestVersion = jnilib.millVersion
   def pluginsUnderTest = Seq(jnilib)
   override def testInvocations =
     Seq(
